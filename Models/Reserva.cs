@@ -15,8 +15,7 @@ namespace DesafioProjetoHospedagem.Models
 
         public void CadastrarHospedes(List<Pessoa> hospedes)
         {
-            // TODO: Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido
-            // *IMPLEMENTE AQUI*
+            
             if (Suite.Capacidade >= hospedes.Count)
             {
                 Hospedes = hospedes;
@@ -24,8 +23,7 @@ namespace DesafioProjetoHospedagem.Models
             else
             {
                 throw new ArgumentException("A capacidade é menor que o número de hóspedes recebido!");
-                // TODO: Retornar uma exception caso a capacidade seja menor que o número de hóspedes recebido
-                // *IMPLEMENTE AQUI*
+                
             }
         }
 
@@ -37,27 +35,19 @@ namespace DesafioProjetoHospedagem.Models
         public int ObterQuantidadeHospedes()
         {
             int quantidade = Hospedes.Count;
-            // TODO: Retorna a quantidade de hóspedes (propriedade Hospedes)
-            // *IMPLEMENTE AQUI*
             return quantidade;
         }
 
         public decimal CalcularValorDiaria()
         {
-
-            // TODO: Retorna o valor da diária
-            // Cálculo: DiasReservados X Suite.ValorDiaria
-            // *IMPLEMENTE AQUI*
             decimal valor = DiasReservados * Suite.ValorDiaria;
 
-            // Regra: Caso os dias reservados forem maior ou igual a 10, conceder um desconto de 10%
-            // *IMPLEMENTE AQUI*
             if (DiasReservados >= 10)
             {
                 valor = valor - (valor * 0.10M);
                 
             }
-
+            
             return valor;
         }
     }
